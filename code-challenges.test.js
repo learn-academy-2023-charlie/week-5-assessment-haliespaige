@@ -36,7 +36,7 @@ const secretCodeWord2 = "Gobbledygook"
 const secretCodeWord3 = "Eccentric"
 // Expected output: "3cc3ntr1c"
 
-////TEST////
+////TEST///
 
 // describe("codeWords", () => {
 //     it("Takes in a string and returns a string with a coded message.", () => {
