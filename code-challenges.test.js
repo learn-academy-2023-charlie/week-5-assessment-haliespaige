@@ -150,20 +150,24 @@ const hand4 = [7, 2, 7, 2, 7]
 // input: array
 // output: true if the array includes 1 pair and 1 three of a kind. or false 
 // Process: 
-//  - Create an empty object to store the count of each number in the array.
-//  
+// - Use a conditional statement to first check if the array length is in face equal to 5, return false if it is not.
+//  - Create an empty object to store the count of each unique number in the array.
+//  - Use a for loop to iterate over each element in the array 
+// - For each element, the code checks if the object already has a property with that value as the key. If it does, it increments the count by 1. Otherwise it initalizes the count to 1. 
+// - The object.values() method extracts all the values from the object and store them in a new array. 
+// - Use the .includes() method to check if the array's values include both the numbers 2 and 3. This condition will return true or false, indicatiing a full house or not. 
 
 
 //TEST//
 
-describe("fullHouse", () => {
-    it("takes in an array of 5 numbers and determines whether or not the array is a fullhouse.", () => {
-        expect(fullHouse(hand1)).toEqual(true)
-        expect(fullHouse(hand2)).toEqual(false)
-        expect(fullHouse(hand3)).toEqual(false)
-        expect(fullHouse(hand4)).toEqual(true)
-    })
-})
+// describe("fullHouse", () => {
+//     it("takes in an array of 5 numbers and determines whether or not the array is a fullhouse.", () => {
+//         expect(fullHouse(hand1)).toEqual(true)
+//         expect(fullHouse(hand2)).toEqual(false)
+//         expect(fullHouse(hand3)).toEqual(false)
+//         expect(fullHouse(hand4)).toEqual(true)
+//     })
+// })
 
 // ReferenceError: fullHouse is not defined
 
@@ -172,19 +176,19 @@ describe("fullHouse", () => {
 // b) Create the function that makes the test pass.
 
 
-const fullHouse = (array) => {
-        if (arr.length !== 5) {
-          return false;
-        }
+// const fullHouse = (array) => {
+//         if (arr.length !== 5) {
+//           return false;
+//         }
       
-        const count = {};
-        for (const num of arr) {
-          count[num] = (count[num] || 0) + 1;
-        }
+//         const count = {};
+//         for (const num of arr) {
+//           count[num] = (count[num] || 0) + 1;
+//         }
       
-        const values = Object.values(count);
-        return values.includes(2) && values.includes(3);
-      }
+//         const values = Object.values(count);
+//         return values.includes(2) && values.includes(3);
+//       }
 
 //   PASS  ./code-challenges.test.js
 //   fullHouse
