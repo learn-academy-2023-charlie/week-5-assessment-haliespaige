@@ -151,7 +151,7 @@ const hand4 = [7, 2, 7, 2, 7]
 // output: true if the array includes 1 pair and 1 three of a kind. or false 
 // Process: 
 //  - Create an empty object to store the count of each number in the array.
-//  - Use a for loop to iterate over each element of the array, check if the element already exists as a key. If it does, it increments the count by 1. Otherwise it initalizes the count to 1.
+//  
 
 
 //TEST//
@@ -173,27 +173,18 @@ describe("fullHouse", () => {
 
 
 const fullHouse = (array) => {
-
-  
-    const count = {};
-    for (let i = 0; i < array.length; i++) {
-      const num = array[i];
-      count[num] = count[num] ? count[num] + 1 : 1;
-    }
-  //I still don't really understand what is going on here??
-    
-    let pairFound = false;
-    let threeOfAKindFound = false;
-    for (const num in count) {
-      if (count[num] === 2) {
-        pairFound = true;
-      } else if (count[num] === 3) {
-        threeOfAKindFound = true;
+        if (arr.length !== 5) {
+          return false;
+        }
+      
+        const count = {};
+        for (const num of arr) {
+          count[num] = (count[num] || 0) + 1;
+        }
+      
+        const values = Object.values(count);
+        return values.includes(2) && values.includes(3);
       }
-    }
-  
-    return pairFound && threeOfAKindFound;
-  }
 
 //   PASS  ./code-challenges.test.js
 //   fullHouse
